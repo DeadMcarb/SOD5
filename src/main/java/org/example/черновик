@@ -1,0 +1,50 @@
+package dataStruct;
+
+public class Stack {
+private Node head;
+int size = 0;
+
+public void push(int value){
+Node node = new Node(value);
+node.setNext(head);
+head = node;
+size++;
+}
+public Integer pop(){
+if (isEmpty()) return null;
+int n = head.getValue();
+head = head.getNext();
+size--;
+return n;
+}
+
+public Integer peek(){
+if (isEmpty()) return null;
+return head.getValue();
+}
+public boolean isEmpty() {
+return size == 0;
+}
+}
+
+
+class Node{
+private int value;
+private Node next;
+
+public Node(int value){
+this.value = value;
+}
+public int getValue() {
+return value;
+}
+public void setValue(int value) {
+this.value = value;
+}
+public Node getNext() {
+return next;
+}
+public void setNext(Node next) {
+this.next = next;
+}
+}
